@@ -1,0 +1,20 @@
+@import "../../../styles/colors";
+
+.image-details {
+    margin: 10px 0;
+
+    td {
+        border: none;
+    }
+
+    .label {
+        text-align: left;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 0 10px 10px 0;
+    }
+
+    .detail {
+        font-size: 16px;
+    }
+}

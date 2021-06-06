@@ -1,0 +1,32 @@
+.folders {
+    .folder {
+        margin: 0 0 5px 0;
+
+        .label {
+            height: 24px;
+            display: flex;
+            flex-direction: row;
+            flex-flow: wrap;
+            flex: 0 1 auto;
+            justify-content: left;
+
+            img {
+                margin: 0 5px 0 0;
+            }
+
+            label {
+                height: 24px;
+                line-height: 24px;
+                font-weight: bold;
+            }
+        }
+
+        .artists {
+            margin: 10px;
+            
+            li {
+                margin: 5px 0;
+            }
+        }
+    }
+}

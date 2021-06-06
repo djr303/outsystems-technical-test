@@ -1,0 +1,60 @@
+@import '../../../styles/colors';
+
+.container {
+    height: inherit;
+    box-sizing: border-box;
+    padding: 10px;
+    
+    .reflex-container.vertical > .reflex-splitter,
+    .reflex-container.vertical > .reflex-splitter:hover,
+    .reflex-container.vertical > .reflex-splitter.active {
+        border-right: 1px solid $off-white;
+        border-left: none;
+        cursor: col-resize;
+        height: 100%;
+        width: 10px;
+        margin-right: 10px;
+        background: none;
+    }
+
+    .reflex-container.horizontal > .reflex-splitter,
+    .reflex-container.horizontal > .reflex-splitter:hover,
+    .reflex-container.horizontal > .reflex-splitter.active {
+        border-bottom: 1px solid $off-white;
+        border-top: none;
+        cursor: col-resize;
+        width: 100%;
+        height: 5px;
+        margin-bottom: 5px;
+        background: none;
+    } 
+
+    .reflex-container > .reflex-element {
+        &::-webkit-scrollbar {
+            width: 1em;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $off-white;
+            outline: none;
+        }
+    }
+
+    .left-side {
+        width: 100%;
+        height: 1000px;
+    }
+
+    .right-side {
+        width: 100%;
+        height: 1000px;
+    }
+
+    .artist-container {
+        width: calc(50vw - 40px);
+    }
+}
