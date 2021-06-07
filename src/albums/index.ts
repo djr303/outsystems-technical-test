@@ -1,4 +1,1 @@
-/* export { default as rootReducer } from './root-reducer';
-export { default } from './store'; */
-
-export {}
+export { default } from './store';

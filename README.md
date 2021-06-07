@@ -12,11 +12,11 @@ Tested on NodeJS v14.17.0, Yarn v1.22.00 & Chrome v91.0.4472.77 (Official Build)
 
 ## Note on further work
 
-COMPLETE THIS
+[ COMPLETE THIS ]
 
 # Approach
 
-DELETE THIS
+[ DELETE THIS ]
 
 * Architectural decisions which allow scope
     * State store (Redux with redux obs)
@@ -27,5 +27,5 @@ DELETE THIS
 
 # TODOs
 
-USE THIS
+[ USE THIS ]
 

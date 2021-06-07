@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
+import { useDispatch, useSelector } from 'react-redux'
 
 import Artist from '../../Display/Artist';
 import ImageDetails from '../../Display/ImageDetails';
 import Folders from '../../Display/Folders'
 
+// TODO: Consider re-exporting actions from index.ta
+import { requestFolders, requestFolder } from '../../../albums/albumsReducer';
+
 import 'react-reflex/styles.css';
 import './index.scss';
+import { folder } from '../../../albums/api';
 
 const artist = {
   id: 1,
@@ -38,7 +43,7 @@ const artist = {
     ]
 }
 
-const folders = [
+/* const folders = [
   {
     name: 'A',
     artists: [
@@ -81,12 +86,24 @@ const folders = [
       },
     ]
   },
-]
+] */
 
 
+const UIContainer: React.FC = () => {
 
-const UIContainer: React.FC = () => (
-  <main className="container">
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: requestFolders })
+  }, [])
+
+  const folders = useSelector((state: any) => state.folders);
+
+  const onFolderExpand = useCallback((folderName) => {
+    dispatch({ type: requestFolder, payload: folderName })
+  }, [])
+
+  return (<main className="container">
     <ReflexContainer orientation="vertical">
 
       <ReflexElement>
@@ -101,9 +118,10 @@ const UIContainer: React.FC = () => (
         <ReflexContainer orientation="horizontal">
           <ReflexElement >
             <div className="folders-container">
-              <Folders
+              { folders ? <Folders
                 folders={folders}
-              />
+                onFolderExpand={onFolderExpand}
+              /> : null }
             </div>
           </ReflexElement>
 
@@ -124,7 +142,7 @@ const UIContainer: React.FC = () => (
       </ReflexElement>
 
     </ReflexContainer>
-  </main>
-)
+  </main>)
+}
 
 export default UIContainer;

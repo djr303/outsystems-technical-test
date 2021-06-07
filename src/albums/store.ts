@@ -1,9 +1,9 @@
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore, } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 
 import * as api from './api';
-// import rootEpic from './albumsEpic';
-// import rootReducer from './albumsReducer';
+import rootEpic from './albumsEpics';
+import rootReducer from './albumsReducer';
 import { composeEnhancers } from './utils';
 
 export const epicMiddleware = createEpicMiddleware<
@@ -15,7 +15,7 @@ export const epicMiddleware = createEpicMiddleware<
   dependencies: api,
 });
 
-/* const configureStore = (initialState?: any) => {
+const configureStore = (initialState?: any) => {
   const middlewares = [epicMiddleware];
   const enhancer = composeEnhancers(applyMiddleware(...middlewares));
 
@@ -27,6 +27,4 @@ export const epicMiddleware = createEpicMiddleware<
 
 const store = configureStore({});
 
-export default store; */
-
-export {}
+export default store;

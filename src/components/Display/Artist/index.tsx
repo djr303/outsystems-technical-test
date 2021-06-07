@@ -15,7 +15,7 @@ const Artist: React.FC<ArtistProps> = ({ name, portfolio }) => (
     <div className="artist">
         <h1>{ name }</h1>
         <div className="thumbnails">
-            { portfolio.map( (t: Thumbnail) => <div className="thumbnail"><img src={t.thumbnail} /></div>)}        
+            { portfolio.map( (t: Thumbnail) => <div key={t.thumbnail} className="thumbnail"><img src={t.thumbnail} /></div>)}        
         </div>
     </div>
 )

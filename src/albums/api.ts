@@ -1,5 +1,5 @@
 const API_ENDPOINT =
-  "https://outsystems78.outsystemscloud.com/PhotoAlbum/rest/album/";
+  "https://outsystems78.outsystemscloud.com/PhotoAlbum/rest/album";
 
 const FETCH_CONFIG: RequestInit = {
   method: "GET",
@@ -11,7 +11,7 @@ const fetchCreator: (base: string, id?: string) => Promise<any> = async (
   base,
   id = ""
 ) => {
-  const res = await fetch(`${base}/${id}`, { ...FETCH_CONFIG });
+  const res = await fetch(`${API_ENDPOINT}/${base}/${id}`, { ...FETCH_CONFIG });
   return await res.json();
 };
 
