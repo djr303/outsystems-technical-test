@@ -22,7 +22,6 @@ Tested on NodeJS v14.17.0, Yarn v1.22.00 & Chrome v91.0.4472.77 (Official Build)
     * State store (Redux with redux obs)
 * Concept driven structure
 * Suitable design language
-* Take components from Wollit test / design elements too :)
 
 
 # TODOs
